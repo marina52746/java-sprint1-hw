@@ -32,12 +32,19 @@ class MonthData {
                 countBest++;
             }
             else {
-                if (countBest > bestSession) {
-                    bestSession = countBest;
-                }
+                bestSession = refreshedMax(countBest, bestSession); // Не знаю, можно ли использовать стандартную функцию max? Мы ее, вроде, не прошли пока...
                 countBest = 0;
             }
         }
+        bestSession = refreshedMax(countBest, bestSession);
         return bestSession;
+    }
+
+    int refreshedMax(int comparingValue, int lastMax)
+    {
+        if (comparingValue > lastMax) {
+            return comparingValue;
+        }
+        return lastMax;
     }
 }

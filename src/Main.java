@@ -1,3 +1,4 @@
+// С Новым годом!!!
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -5,14 +6,14 @@ public class Main {
         StepTracker stepTracker = new StepTracker(scanner);
         while (true) {
             printMenu();
-            int i = scanner.nextInt();
-            if (i == 1) {
+            int commandNumber = scanner.nextInt();
+            if (commandNumber == 1) {
                 stepTracker.addNewNumberStepsPerDay();
-            } else if (i == 2) {
+            } else if (commandNumber == 2) {
                 stepTracker.changeStepGoal();
-            } else if (i == 3) {
+            } else if (commandNumber == 3) {
                 stepTracker.printStatistic();
-            } else if (i == 4) {
+            } else if (commandNumber == 4) {
                 System.out.println("Пока!");
                 scanner.close();
                 return;
